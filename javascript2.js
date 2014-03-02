@@ -1,4 +1,4 @@
-function even(n) {
+function is_even(n) {
 
     return (n%2 === 0)
 }
@@ -22,7 +22,7 @@ function filter(boolean_func, fibonacci_set) {
     fib_list = fibonacci_set
     for (var i = 0; i < fib_list.length; i++){
 
-        if (even(fib_list[i])) {
+        if (boolean_func(fib_list[i])) {
             new_list.push(fib_list[i])
         }
 
@@ -44,7 +44,7 @@ function fibonacci_set(max){
             }
     }
 
-    var even_fibs = sum(filter(even,fib_list))
+    var even_fibs = sum(filter(is_even,fib_list))
     return even_fibs
 
     }
